@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Image Detector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍎 Fruit Image Detector</h1>
+            <p class="subtitle">Upload an image and detect fruits with AI accuracy</p>
+        </header>
+
+        <div class="main-content">
+            <div class="upload-section">
+                <h2 class="section-title">Upload Image</h2>
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📁</div>
+                    <p class="upload-text">Drag & drop an image here or click to browse</p>
+                    <button class="upload-btn">Choose File</button>
+                    <input type="file" id="fileInput" class="file-input" accept="image/*">
+                </div>
+                <div class="image-preview">
+                    <img id="previewImg" class="preview-img" alt="Preview">
+                </div>
+                <button id="detectBtn" class="detect-btn" disabled>Detect Fruit</button>
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Loading AI Model...</p>
+                </div>
+            </div>
+
+            <div class="result-section">
+                <h2 class="section-title">Detection Results</h2>
+                <div class="result-container" id="resultContainer">
+                </div>
+            </div>
+        </div>
+
+        <div class="detection-result" id="detectionResult">
+            <div class="result-card">
+                <h3>Detection Result</h3>
+                <div class="detected-fruit" id="detectedFruit">-</div>
+                <div class="confidence-level" id="confidenceLevel">-</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Fruit Image Detector &copy; 2023 | Powered by Teachable Machine</p>
+            <p class="model-info">Model: <span id="modelStatus">Loading...</span></p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
